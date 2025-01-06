@@ -3,6 +3,20 @@
     "route": "",
     "flowLayout": false,
     "params": {},
-    "title": "index"
+    "title": "layout",
+    "children": [
+      {
+        "route": "",
+        "flowLayout": false,
+        "params": {},
+        "title": "index"
+      },
+      {
+        "route": "chat",
+        "flowLayout": false,
+        "params": {},
+        "title": "chat"
+      }
+    ]
   }
 ]
