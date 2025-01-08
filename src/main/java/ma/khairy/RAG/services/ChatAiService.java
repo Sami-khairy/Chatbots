@@ -3,6 +3,8 @@ package ma.khairy.RAG.services;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import com.vaadin.hilla.BrowserCallable;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
+import org.springframework.ai.chat.memory.InMemoryChatMemory;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.chat.prompt.PromptTemplate;
 import org.springframework.ai.document.Document;
@@ -23,7 +25,7 @@ public class ChatAiService {
     @Value("classpath:/prompts/prompt-template.st")
     private Resource promptResource;
     public ChatAiService(ChatClient.Builder chatClient, VectorStore vectorStore) {
-        this.chatClient = chatClient.build();
+        this.chatClient = chatClient.defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory())).build();
         this.vectorStore = vectorStore;
     }
 
