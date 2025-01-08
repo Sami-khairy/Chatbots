@@ -9,6 +9,7 @@ import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 import java.util.Map;
@@ -30,6 +31,12 @@ public class ChatAiService {
         return chatClient.prompt()
                 .user(question)
                 .call().content();
+    }
+
+    public Flux<String> chatStreamingData(String question) {
+        return chatClient.prompt()
+                .user(question)
+                .stream().content();
     }
     public String rag(String question) {
         List<Document> documents = vectorStore.similaritySearch(question);
