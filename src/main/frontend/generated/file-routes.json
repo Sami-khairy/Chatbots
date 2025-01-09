@@ -16,6 +16,12 @@
         "flowLayout": false,
         "params": {},
         "title": "Chat"
+      },
+      {
+        "route": "fileUpload",
+        "flowLayout": false,
+        "params": {},
+        "title": "File Upload"
       }
     ]
   }

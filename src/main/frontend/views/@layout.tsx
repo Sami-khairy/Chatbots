@@ -7,6 +7,7 @@ export default function layout(){
             <nav>
                 <NavLink className="btn btn-outline-info m-1" to="/">Home</NavLink>
                 <NavLink className="btn btn-outline-info m-1" to="/chat">Chat</NavLink>
+                <NavLink className="btn btn-outline-info m-1" to="/fileUpload">File Upload</NavLink>
             </nav>
             <main>
                 <Outlet/>

@@ -94,7 +94,6 @@ export default function Chat() {
                 </Button>
             </div>
 
-            {/* Affichage de la réponse */}
             <div className="mt-m">
                 <h2>Réponse :</h2>
                 <div className="response-box">
@@ -102,7 +101,6 @@ export default function Chat() {
                 </div>
             </div>
 
-            {/* Indicateur de chargement */}
             {isLoading && <p>Chargement en cours...</p>}
         </div>
     );
